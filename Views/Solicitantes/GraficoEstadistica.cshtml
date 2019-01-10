@@ -1,0 +1,112 @@
+﻿@model IEnumerable<BBKBootCamp.Models.Solicitante>
+
+@{
+    ViewData["Title"] = "GraficoEstadistica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counterh = 0;
+    int counterm = 0;
+}
+
+<h2>GraficoEstadistica</h2>
+
+
+<h3>Aca estaran situadas las graficas</h3>
+<div style="width: 400px; height: 400px;">
+    <canvas id="myChart" width="200" height="200"></canvas>
+    <!-- EN ESTE DIV DARLE UNA CLASE Y METERLE ATRIBUTOS EN CSS PARA CENTRARLO Y DARLE ESTILO -->
+</div>
+@section Scripts {
+    <script>
+
+var ctx = document.getElementById("myChart").getContext('2d');
+
+var data = {
+    datasets: [{
+        data: [13, 7],
+        backgroundColor: ['pink', 'lightblue'],
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'mujeres',
+        'hombres'
+    ]
+};
+var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data,
+    options: Chart.defaults.pie
+});
+
+    </script>
+}
+
+<table class="table">
+    @*<thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.SexoTipo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>*@
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>*@
+
+                <td>
+                    @{
+                        if (item.SexoTipo == "Hombre")
+                        {
+                            counterh = counterh + 1;
+                        }
+                        else
+                        {
+                            counterm = counterm + 1;
+                        }
+                    }
+                </td>
+                @*<td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Modificar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                    </td>*@
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+<p>Total de mujeres inscritas</p>
+@counterh
+
+<p>Total de Hombres inscritos</p>
+@counterm
+
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    </script>
+    <script>
+            let datos = {
+
+    };
+    </script>
+
+</head>
+<body>
+    <div id="charts"></div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Web Code4Jobs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="left">
+            <a href="#menu"><span>Register</span></a>
+        </nav>
+        <a href="/Home/Index" class="logo"><img src="~/images/Logo_BBK.png" /></a>
+        <nav class="right">
+            @*<ul class="button alt">
+                <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            </ul>
+            <ul class="button alt">
+                <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+            </ul>*@
+        </nav>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a asp-controller="Home" asp-action="Index">Coding Bootcamp</a></li>
+            <li><a asp-controller="Home" asp-action="About">Nuestro método</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Becas y preguntas</a></li>
+            <li><a asp-controller="Solicitantes" asp-action="Create">Formulario de inscripción</a></li>
+            @if (User.IsInRole("Solicitante"))
+            {
+                <li><a asp-controller="Solicitantes" asp-action="Index">Solicitantes</a></li>
+            }
+        </ul>
+        <ul class="actions vertical">
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
+        </ul>
+    </nav>
+    <hr />
+    <h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h2>Dar de alta a un nuevo Entrevistador/a</h2>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                @*AÑADO LOS NUEVOS CAMPOS*@
+                <div class="form-group">
+                    <label asp-for="Input.Nombre"></label>
+                    <input asp-for="Input.Nombre" class="form-control" />
+                    <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Apellido"></label>
+                    <input asp-for="Input.Apellido" class="form-control" />
+                    <span asp-validation-for="Input.Apellido" class="text-danger"></span>
+                </div>
+                <hr />
+                <button type="submit" class="btn btn-default">ALTA</button>
+            </form>
+        </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

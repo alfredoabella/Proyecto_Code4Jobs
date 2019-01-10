@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <title>Becas y preguntas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="left">
+            <a href="#menu"><span>Menu</span></a>
+        </nav>
+        <a href="/Home/Index" class="logo"><img src="~/images/Logo_BBK.png" /></a>
+        <nav class="right">
+            <ul class="button alt">
+                <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            </ul>
+            @if (User.IsInRole("Administradora"))
+            {
+                <ul class="button alt">
+                    <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                </ul>
+            }
+        </nav>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a asp-controller="Home" asp-action="Index">Coding Bootcamp</a></li>
+            <li><a asp-controller="Home" asp-action="About">Nuestro método</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Becas y preguntas</a></li>
+            <li><a asp-controller="Solicitantes" asp-action="Create">Formulario de inscripción</a></li>
+            @if (User.IsInRole("Solicitante"))
+            {
+                <li><a asp-controller="Solicitantes" asp-action="Index">Solicitantes</a></li>
+            }
+        </ul>
+        <ul class="actions vertical">
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+        </ul>
+    </nav>
+    <br />
+    <br />
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <header class="align-center">
+                <h1>Acceder a las becas BBK Bootcamp 2019</h1>
+                <p>Os explicamos como poder acceder a las becas proporcionadas por la BBK</p>
+            </header>
+            <div class="image fit">
+                <img src="~/images/becas-bbk.jpg" alt="" />
+            </div>
+            <p>En sí, el concepto de un coding bootcamp es muy bonito, pero el problema viene en ocasiones cuando descubrimos lo poco asequibles que son. De media en España, los precios rondan entorno a los 6.500 euros como mínimo. Y aún, se quedan cortos. En Estados Unidos por ejemplo, un coding bootcamp no suele bajar de los 10.000 euros. Si tenemos en cuenta la concentración en tiempo y calidad de la formación, el precio comienza a tener sentido, pero no deja de ser alto para muchos/as de nosotros/as.</p>
+            <p>A día de hoy, la Comisión Europea sigue estimando que existe una escasez de gente con habilidades digitales, llegando a afirmar que para el año 2020 habrá unos 756.000 puestos sin cubrir en el sector de las tecnologías de la información. En Euskadi concretamente existe una importante bolsa de empleo sin atender en ese campo. De hecho, a principios de 2017 existía en el País Vasco una demanda de más de 300 programadores junior.</p>
+            <p>Es difícil quedarse indiferente ante estos datos y precisamente por eso, una de los principales objetivos detrás del BBK Bootcamp era que el pago no supusiese ningún problema para nadie. Buscamos apostar por el talento digital enseñando a jóvenes a programar, contribuir al desarrollo económico y la cohesión social, y así impulsar no sólo Bizkaia, sino todo Euskadi, al máximo. Lo que nos interesa es facilitar que todas las personas tengan acceso a la formación, y así democratizar la educación, que llegue a todas, las personas que vivan en nuestro territorio.</p>
+            <p>En total, el BBK Bootcamp tiene un precio de 3.000 euros. Aún así, las condiciones de pago son muy flexibles y proponen a los alumno/as tres opciones:</p>
+            <ol>
+                <li>Pagar por adelantado y obtener un descuento.</li>
+                <li>Pagar el 50% al inicio y el otro 50% hasta seis meses después de finalizar el bootcamp (una vez el/la alumno/a haya conseguido un empleo).</li>
+                <li>Conseguir una de las becas ofrecidas y hacer el pago final una vez terminado el bootcamp.</li>
+            </ol>
+            <p>Estas becas se dividen en dos categorías: becas ordinarias y las llamadas ‘especiales’. La beca ordinaria proporciona una ayuda económica del 50% del precio del curso, mientras que la beca de carácter ‘especial’ ofrece una ayuda económica del 100% del precio del curso.</p>
+            <h3>Instrucciones detalladas para solicitar las becas para BBK Bootcamp:</h3>
+            <ol>
+                <li>Ir a la web: <a href="https://becas.bbk.eus/beca/2a-edicion-becas-bbk-bootcamp/">BBK</a></li>
+                <li>Darse de alta en BBK y tú</li>
+                <li>Rellenar la solicitud de Beca Bootcamp y añadir los documentos necesarios:</li>
+            </ol>
+            <ul>
+                <li>Para beca ordinaria: DNI, certificado del padron (estar empadronado en Bizkaia) y documento de lanbide que demuestre que estás en situación de desempleo.</li>
+                <li>Para beca especial: los documentos de la beca ordinara + la declaración de la renta de la unidad familiar</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <header class="align-center">
+                <h1>Preguntas frecuentes</h1>
+            </header>
+            <div class="image fit">
+                <img src="~/images/preguntas.jpg" alt="" />
+            </div>
+            <h2>¿Cómo definirías un coding bootcamp?</h2>
+            <p>El Coding Bootcamp es un tipo de formación que surge por la demanda por parte de las empresas de obtener desarrolladores o programadores junior. Es un tipo de formación presencial intensiva en programación, con una duración de 3-4 meses, y del cual, los estudiantes salen con las habilidades necesarias para trabajar como desarrolladores de software junior. La formación técnica se complementa con el desarrollo de habilidades personales y orientación laboral.</p>
+            <p>Este enfoque impulsado por la demanda justifica las altas tasas de inserción de estos programas, superiores al 75%, llegando en algunos casos al 100% de empleabilidad.</p>
+            <p>Si se compara con cursos online en programación (ej. Coursera o Udemy), los bootcamps presenciales ofrecen valor añadido mediante la formación en habilidades blandas (networking, creatividad, resolución de problemas…) y orientación profesional, además de creando una red de compañeros y contactos en empresas del sector.</p>
+            <p>La intensidad y la profundidad del Coding Bootcamp son clave para acercar a los alumnos al nivel requerido por parte de la industria.</p>
+            <hr />
+            <h2>¿Es necesario saber programar para empezar el BBK Bootcamp?</h2>
+            <p>¡No! Si sabes programar en otros lenguajes, genial. Pero si no sabes, no te preocupes porque te enseñaremos desde cero. Te pasaremos también unos cursos previos para que realices en casa antes de empezar el bootcamp, y así el primer día tendrás unos conceptos básicos de programación. Sólo hace falta que traigas muchas ganas y conocimientos básicos de ordenadores. Algunos/as avanzarán más rápido que otros/as, pero no pasa nada, nuestro curriculum está diseñado para que todos/as aprendan y poder dar apoyo a aquellos/as que van un poquito más rezagados/as.</p>
+            <hr />
+            <h2>¿Cómo es el/la estudiante ideal de BBK Bootcamp?</h2>
+            <p>Lo que prima es la motivación, las ganas que tenga el/la estudiante de aprender practicando de manera intensiva durante las 12 semanas que dura el bootcamp.</p>
+            <hr />
+            <h2>¿Cómo funciona el proceso de admisiones?</h2>
+            <ul>
+                <li>Rellena el formulario online: <a href="http://bbkbootcamp.com/bootcamp">BBK Bootcamp</a></li>
+                <li>Te citaremos para una entrevista en persona.</li>
+                <li>Si has sido seleccionado, lo sabrás en un plazo máximo de una semana y tendrás hasta el comienzo del curso para realizar la instalación de los programas necesarios (nosotros te pasaremos una guía paso a paso).</li>
+            </ul>
+            <hr />
+            <h2>¿Cómo sabré si he sido seleccionado?</h2>
+            <p>Te enviaremos un email como máximo una semana después de que hayas hecho la entrevista presencial. Si no has recibido nada o necesitas saberlo antes, puedes escribirnos a: <a href="bbkbootcamp@code4jobs.com">Code4Jobs</a></p>
+            <hr />
+            <h2>¿Por qué tiene ese precio?</h2>
+            <p>Gracias al apoyo de la BBK este bootcamp tiene un precio de 3.000 euros. En otros lugares de España los bootcamps superan los 6.000€, nosotros te lo ofrecemos por la mitad. Y estamos seguros de que serás capaz de recuperar la inversión en menos de 6 meses, ya que los sueldos de los programadores no hacen más que subir. Concentramos las horas y nos enfocamos en lo estríctamente necesario, para que tu inversión valga la pena.</p>
+            <hr />
+            <h2>¿Necesito un portátil?</h2>
+            <ol>
+                <li>Para PC: Windows 8.1 o superior, Procesador de 1,8 GHz o superior, 2 GB de RAM (recomendado 4 GB o superior). Espacio libre en disco duro 130 GB.</li>
+                <li>Para Mac: Mac OS X El Capitan 10.11 o superior, Procesador de 1,8 GHz o superior. Mínimo de 4 GB si se ejecuta en una máquina virtual. Espacio en disco duro: aproximadamente 1 GB.</li>
+            </ol>
+            <hr />
+            <h2>¿Cuál es el horario?</h2>
+            <p>El horario oficial es de 9:00 a 19:00, con una hora para comer. De vez en cuando tenemos Happy Hour, por lo que puedes quedarte con tus compañeros, u otros invitados de empresas, a tomar unas cervezas. El bootcamp es intensivo, por lo que es posible que quieras quedarte más horas practicando.</p>
+            <hr />
+            <h2>¿Cuál es la diferencia entre un coding bootcamp, una carrera universitaria y un módulo de formación profesional?</h2>
+            <p>El coding bootcamp tiene toda la materia concentrada en 12 semanas, lo suficiente para que puedas entrar al mundo laboral sabiendo todo lo necesario. Las carreras universitarias y los módulos también tienen asignaturas de programación, pero en estos casos están repartidas a lo largo del tiempo, y mezcladas con muchas otras materias. La concentración de un bootcamp hace que asimiles muy bien los conceptos y evoluciones muy rápido. Además, se desarrollan otras habilidades (comunicación, trabajo en equipo, liderazgo…) a la vez que aprendes a programar. ¡Y no hay exámenes!</p>
+            <hr />
+            <h2>¿Puedo aprender online lo que se aprende en un coding bootcamp?</h2>
+            <p>Hoy en día todo está online, por lo que podrías intentarlo. También debes saber que, según las estadísticas, de la gente que empieza un curso online solo el 4% lo termina. La mayoría de los programadores saben lo difícil que es aprender a programar sin soporte de compañeros o profesores. De hecho, muchos/as de los/las que han hecho BBK Bootcamp (u otros coding bootcamps por el mundo) han intentado aprender online primero. En BBK Bootcamp te aseguramos que con los profesores, los mentores y tus compañeros, aprenderás todo lo necesario y estarás motivado hasta el final.</p>
+            <hr />
+            <h2>¿Por qué el lenguaje usado es .NET?</h2>
+            <p>.NET es actualmente el lenguaje que más se demanda en las empresas vascas. Existe un gran déficit de desarrolladores junior que sepan programar en .NET y cada semana se publican más de 15 ofertas laborales. Por eso sabemos que si le pones tiempo y sobre todo ganas, tendrás muy fácil encontrar empleo después del bootcamp.</p>
+            <hr />
+            <h2>¿Haré un proyecto fin de bootcamp?</h2>
+            <p>Sí, así como el proyecto fin de grado en la universidad, tendrás oportunidad de desarrollar una plataforma web como proyecto fin de bootcamp. Puede ser una idea que tú tengas, o algo que una empresa real necesite en ese momento, ya que tendrás oportunidad de conocer muchas empresas durante las 12 semanas. Este proyecto te servirá después a la hora de encontrar trabajo, ya que es una muestra de lo que sabes hacer.</p>
+            <hr />
+            <h2>¿Me darán un certificado/título al finalizar?</h2>
+            <p>Sí. El certificado no es oficial, pero sí que te daremos un título con tu nombre y DNI, que servirá para que muestres que has hecho éxitosamente un coding bootcamp. Además del título, prepararás un portafolio, lo cual servirá para que muestres a las empresas todo eso que sabes hacer.</p>
+            <hr />
+            <h2>¿Participar en el coding bootcamp me asegura un trabajo?</h2>
+            <p>En todo el mundo, más del 75% de los que terminan un bootcamp encuentran un trabajo en menos de 3 meses. Hay algunos bootcamps en los que el 100% de los graduados encuentran trabajo. De la primera promoción de BBK Bootcamp, un 80% estaba trabajando tres meses después de terminar. Nosotros te ayudaremos a estar en contacto con las empresas, a preparar tu curriculum, tu portafolio y las entrevistas de trabajo. Tú sólo tienes que poner las ganas de aprender, y en el resto te ayudaremos nosotros.</p>
+            <hr />
+            <h2>¿Tiene BBK Bootcamp algo que ver con el festival de música Bilbao BBK Live?</h2>
+            <p>Kutxabank y su Fundación BBK están detrás de ambas iniciativas, independientes una de otra.</p>
+            <hr />
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>Contacta con nosotros</h2>
+            <ul class="actions">
+                <li><span class="icon fa-phone"></span> <a href="tel:+34649332295"> Llamar a: 649332295</a></li>
+                <li><span class="icon fa-envelope"></span> <a href="mailto:bbkbootcamp@code4jobs.com"> Contacta con nosotros</a></li>
+                <li><span class="icon fa-map-marker"></span> Icaza Colaborando | Alameda Mazarredo 47 | Bilbao</li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://twitter.com/bbkbootcamp?lang=es" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/bbkbootcamp/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/bbkbootcamp/?hl=es" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="http://bbkbootcamp.com/blog/" class="icon fa-dribbble"><span class="label">Blog</span></a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            &copy; Alfredo & Nicolas Design.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+@*<h2>@ViewData["Title"]</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@

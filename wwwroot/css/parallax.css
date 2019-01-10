@@ -1,0 +1,183 @@
+﻿.diy-content-section-row {
+    height: 100vh;
+    height: 700px;
+    position: relative;
+}
+
+.content-center .diy-content-section-container {
+    float: none;
+    margin: 0 auto;
+    width: auto;
+}
+
+
+
+.content-left .diy-content-section-container {
+    float: left;
+}
+
+.diy-content-section-container {
+    padding-top: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: inherit;
+    width: 40%;
+    float: right;
+    position: relative;
+}
+
+.content-left .diy-content-holder {
+    float: right;
+}
+
+.diy-content-holder {
+    max-width: 500px;
+    padding: 5% 5%;
+    text-align: center;
+    border-radius: 5%;
+    opacity: 0.8;
+    text-size-adjust:auto;
+}
+
+.swag-box .diy-content-photo-container, .swag-box .diy-content-section-container {
+    height: 600px;
+}
+
+.diy-content-section-row {
+    /* height: 100vh; */
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-right .diy-content-photo-container {
+    float: left;
+}
+
+.bg-two > .diy-content-photo-container {
+    background-image: url(../images/aula.jpg);
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% -680px;
+}
+
+.content-center .diy-content-section-container {
+    float: none;
+    margin: 0 auto;
+    width: auto;
+    color: #fff;
+}
+
+/*.bg-two > .diy-content-photo-container {
+    background-image: url(../images/images/razer-nari-ultimate-gallery-06.jpg);
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% -680px;
+}*/
+
+.diy-content-photo-container {
+    height: 700px;
+    width: 60%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.diy-content-section-row.background-color-two.slash-bg .diy-content-section-container {
+    background-color: #f6755e;
+    color: #000;
+}
+
+.content-right.slash-bg .diy-content-section-container:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -120px;
+    border-bottom: 700px solid #f6755e;
+    border-left: 120px solid transparent;
+    height: 0;
+    width: 0;
+}
+
+element.style {
+    background-position: 0% 75.5px;
+}
+
+.content-left .diy-content-photo-container {
+    float: right;
+}
+
+.bg-three > .diy-content-photo-container {
+    background-image: url(../images/images/razer-nari-ultimate-gallery-07.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% -80px;
+}
+
+.diy-content-section-row.background-color-one.slash-bg .diy-content-section-container {
+    background-color: #0d0d1f;
+    color: #fff;
+}
+
+.content-left .diy-content-section-container {
+    float: left;
+}
+
+content-section-row.background-color-one.slash-bg .diy-content-section-container:after {
+    border-bottom-color: #0d0d1f;
+    border-top-color: #0d0d1f;
+}
+
+.content-left.slash-bg .diy-content-section-container:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -110px;
+    border-top: 700px solid #0d0d1f;
+    border-right: 120px solid transparent;
+    height: 0;
+    width: 0;
+}
+
+.diy-step .diy-line {
+    margin: 50px auto;
+    width: 200px;
+    text-align: center;
+}
+
+.diy-step-main > * {
+    position: relative;
+    z-index: 2;
+}
+
+.diy-line {
+    margin: 20px auto;
+    height: 5px;
+    background-color: white;
+}
+.actions vertical{
+    text-align:center;
+    float:none;
+}
+h2 {
+    color: #25a2c3;
+}
+#fuente{
+    font-family:'Times New Roman', Times, serif;
+    font-style:oblique;
+    font-size:large;
+    color:white;
+}
+#fuente2{
+    font-family:'Times New Roman', Times, serif;
+    font-size:x-large;
+}

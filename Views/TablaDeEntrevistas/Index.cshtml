@@ -1,0 +1,178 @@
+﻿@model IEnumerable<BBKBootCamp.Models.TablaDeEntrevista>
+@inject BBKBootCamp.Models.UsuarioInterno UsuarioInterno
+@inject BBKBootCamp.Servicios.TablaTransitoria TablaTransitoria
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Web Code4Jobs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="left">
+            <a href="#menu"><span>Tabla de entrevistas</span></a>
+        </nav>
+        <a href="/Home/Index" class="logo"><img src="~/images/Logo_BBK.png" /></a>
+        <nav class="right">
+            @*<ul class="button alt">
+                    <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                </ul>*@
+
+            @if (User.IsInRole("Administradora"))
+            {
+
+                <ul class="button alt">
+                    <li><a asp-area="Identity" asp-page="/Account/Register">Crear Entrevistador/a</a></li>
+                </ul>
+            }
+
+            @*<ul class="button alt">
+                    <li><a asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
+                </ul>*@
+
+
+
+        </nav>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a asp-controller="Home" asp-action="Index">Coding Bootcamp</a></li>
+            <li><a asp-controller="Home" asp-action="About">Nuestro método</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Becas y preguntas</a></li>
+            <li><a asp-controller="Solicitantes" asp-action="Create">Formulario de inscripción</a></li>
+            @if (User.IsInRole("Solicitante"))
+            {
+                <li><a asp-controller="Solicitantes" asp-action="Index">Solicitantes</a></li>
+            }
+            @if (User.IsInRole("HoraDisponible"))
+            {
+                <li><a asp-controller="HoraDisponibles" asp-action="Index">Horas disponibles</a></li>
+            }
+            @if (User.IsInRole("TablaDeEntrevista"))
+            {
+                <li><a asp-controller="TablaDeEntrevistas" asp-action="Index">Tabla de entrevistas</a></li>
+            }
+        </ul>
+        <ul class="actions vertical">
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+            <li class="button fit"><a asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
+        </ul>
+    </nav>
+    <h2>ESPACIO ENTREVISTAS</h2>
+
+    @if (User.IsInRole("Administradora"))
+    {
+        <p>
+            <a asp-action="Create">Añade una nueva entrevista</a>
+        </p>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Entrevistadora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Solicitante.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Solicitante.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Solicitante.SexoTipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Solicitante.CorreoElectronico)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HoraDisponible)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr @if (item.Estado == "Descartado") { @: class="Descartado"
+                    } ;
+                    @if (item.Estado == "Seleccionado") { @: id="Seleccionado"
+                    }>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Entrevistadora.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Solicitante.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Solicitante.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Solicitante.SexoTipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Solicitante.CorreoElectronico)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoraDisponible.FechaHora)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Modificar candidatura</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                        @if (User.IsInRole("Administradora"))
+                        {
+
+                            <a asp-action="Delete" asp-route-id="@item.Id">Eliminar candidatura</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <!-- FOOTER-->
+    <footer id="footer">
+        <div class="inner">
+            <div class="inner">
+                <h2>Área interna</h2>
+                <a class="logo"><img src="~/images/Logo_BBK.png" /></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Alfredo & Nicolas Design.
+        </div>
+    </footer>
+    <!-- FOOTER-->
+
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

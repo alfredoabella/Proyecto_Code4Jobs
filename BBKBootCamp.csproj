@@ -1,0 +1,121 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-BBKBootCamp-DC7A7672-3138-463D-8A4A-D2C3FBE817F5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="wwwroot\assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Shared\_Layout.cshtml" />
+    <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="wwwroot\images\banner2.svg" />
+    <Content Remove="wwwroot\images\banner3.svg" />
+    <Content Remove="wwwroot\images\.DS_Store" />
+    <Content Remove="wwwroot\images\BBKBootcamp.jpg" />
+    <Content Remove="wwwroot\images\Codigobootcamp.jpg" />
+    <Content Remove="wwwroot\images\GobiernoVasco.png" />
+    <Content Remove="wwwroot\images\Icaza.png" />
+    <Content Remove="wwwroot\images\LogoBBK.jpg" />
+    <Content Remove="wwwroot\images\Logo_BBK.png" />
+    <Content Remove="wwwroot\images\banner.jpg" />
+    <Content Remove="wwwroot\images\bannerProgram.jpg" />
+    <Content Remove="wwwroot\images\bbk.png" />
+    <Content Remove="wwwroot\images\becas-bbk.jpg" />
+    <Content Remove="wwwroot\images\codigo-QR.png" />
+    <Content Remove="wwwroot\images\ordenador.jpg" />
+    <Content Remove="wwwroot\images\pic01.jpg" />
+    <Content Remove="wwwroot\images\pic02.jpg" />
+    <Content Remove="wwwroot\images\pic03.jpg" />
+    <Content Remove="wwwroot\images\pic04.jpg" />
+    <Content Remove="wwwroot\images\pic05.jpg" />
+    <Content Remove="wwwroot\images\preguntas.jpg" />
+    <Content Remove="wwwroot\images\red-background.jpg" />
+    <Content Remove="wwwroot\images\reloj.jpg" />
+    <Content Remove="wwwroot\images\teclado.jpg" />
+    <Content Remove="wwwroot\images\trabajar.jpg" />
+    <Content Remove="wwwroot\images\trabajo.png" />
+    <Content Remove="wwwroot\assets\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\assets\css\main.css" />
+    <Content Remove="wwwroot\assets\fonts\FontAwesome.otf" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.eot" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.woff" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Remove="wwwroot\assets\js\jquery.min.js" />
+    <Content Remove="wwwroot\assets\js\jquery.scrolly.min.js" />
+    <Content Remove="wwwroot\assets\js\main.js" />
+    <Content Remove="wwwroot\assets\js\skel.min.js" />
+    <Content Remove="wwwroot\assets\js\util.js" />
+    <Content Remove="wwwroot\images\fondofor.jpg" />
+    <Content Remove="wwwroot\images\ordenador2.jpg" />
+    <Content Remove="wwwroot\images\clase.jpg" />
+    <Content Remove="wwwroot\images\clase1.png" />
+    <Content Remove="wwwroot\images\aula.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="wwwroot\images\.DS_Store" />
+    <None Include="wwwroot\images\BBKBootcamp.jpg" />
+    <None Include="wwwroot\images\Codigobootcamp.jpg" />
+    <None Include="wwwroot\images\GobiernoVasco.png" />
+    <None Include="wwwroot\images\Icaza.png" />
+    <None Include="wwwroot\images\LogoBBK.jpg" />
+    <None Include="wwwroot\images\Logo_BBK.png" />
+    <None Include="wwwroot\images\banner.jpg" />
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
+    <None Include="wwwroot\images\bannerProgram.jpg" />
+    <None Include="wwwroot\images\bbk.png" />
+    <None Include="wwwroot\images\becas-bbk.jpg" />
+    <None Include="wwwroot\images\codigo-QR.png" />
+    <None Include="wwwroot\images\ordenador.jpg" />
+    <None Include="wwwroot\images\pic01.jpg" />
+    <None Include="wwwroot\images\pic02.jpg" />
+    <None Include="wwwroot\images\pic03.jpg" />
+    <None Include="wwwroot\images\pic04.jpg" />
+    <None Include="wwwroot\images\pic05.jpg" />
+    <None Include="wwwroot\images\preguntas.jpg" />
+    <None Include="wwwroot\images\red-background.jpg" />
+    <None Include="wwwroot\images\reloj.jpg" />
+    <None Include="wwwroot\images\teclado.jpg" />
+    <None Include="wwwroot\images\trabajar.jpg" />
+    <None Include="wwwroot\images\trabajo.png" />
+    <None Include="wwwroot\assets\css\font-awesome.min.css" />
+    <None Include="wwwroot\assets\css\main.css" />
+    <None Include="wwwroot\assets\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\jquery.scrolly.min.js" />
+    <None Include="wwwroot\assets\js\main.js" />
+    <None Include="wwwroot\assets\js\skel.min.js" />
+    <None Include="wwwroot\assets\js\util.js" />
+    <None Include="wwwroot\images\fondofor.jpg" />
+    <None Include="wwwroot\images\ordenador2.jpg" />
+    <None Include="wwwroot\images\clase.jpg" />
+    <None Include="wwwroot\images\clase1.png" />
+    <None Include="wwwroot\images\aula.jpg" />
+  </ItemGroup>
+</Project>
